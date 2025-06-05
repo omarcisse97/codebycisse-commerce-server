@@ -26,27 +26,29 @@ module.exports = defineConfig({
   admin: {
     disable: process.env.DISABLE_MEDUSA_ADMIN === "true",
   },
-  modules: [
-    {
-      resolve: "@medusajs/medusa/cache-redis",
-      options: {
-        redisUrl: process.env.REDIS_URL,
-      },
-    },
-    {
-      resolve: "@medusajs/medusa/event-bus-redis",
-      options: {
-        redisUrl: process.env.REDIS_URL,
-      },
-    },
-    {
-      resolve: "@medusajs/medusa/workflow-engine-redis",
-      options: {
-        redis: {
-          url: process.env.REDIS_URL,
-        },
-      },
-    },
-  ],
+  // modules: [
+  //   {
+  //     resolve: "@medusajs/medusa/cache-redis",
+  //     options: {
+  //       redisUrl: process.env.REDIS_URL,
+  //     },
+  //   },
+  //   {
+  //     resolve: "@medusajs/medusa/event-bus-redis",
+  //     options: {
+  //       redisUrl: process.env.REDIS_URL,
+  //     },
+  //   },
+  //   {
+  //     resolve: "@medusajs/medusa/workflow-engine-redis",
+  //     options: {
+  //       redis: {
+  //         url: process.env.REDIS_URL,
+  //       },
+  //     },
+  //   },
+  // ],
 
-})
+});
+
+//cd .medusa/server && npm install && npm run start
