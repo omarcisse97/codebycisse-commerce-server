@@ -13,9 +13,11 @@
     "medusa"
   ],
   "scripts": {
-    "build": "medusa build",
+    "build": "npm run build:backend && npm run build:admin",
+    "build:backend": "medusa build --skip-admin",
+    "build:admin": "medusa build --admin-only",
+    "start": "medusa start",
     "seed": "medusa exec ./src/scripts/seed.ts",
-    "start": "medusa build && medusa start",
     "dev": "medusa develop",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
     "test:integration:modules": "TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit",
