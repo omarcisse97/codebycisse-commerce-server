@@ -1,7 +1,9 @@
 import { loadEnv, defineConfig } from '@medusajs/framework/utils'
 
 
-loadEnv(process.env.NODE_ENV || 'development', process.cwd())
+if (process.env.NODE_ENV === 'development') {
+  loadEnv(process.env.NODE_ENV, process.cwd())
+}
 
 
 console.log("DATABASE_URL:", process.env.DATABASE_URL)
